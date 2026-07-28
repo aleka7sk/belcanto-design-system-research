@@ -3,7 +3,7 @@
   "meta": {
     "name": "Belcanto exploratory tokens",
     "status": "EXPLORATORY / NON-NORMATIVE",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "date": "2026-07-29"
   },
   "color": {
@@ -41,18 +41,32 @@
     "light": {
       "background": {
         "canvas": { "$type": "color", "$value": "#FAF7FC" },
+        "sunken": { "$type": "color", "$value": "#F0EAF5" },
         "surface": { "$type": "color", "$value": "#FFFDFE" },
         "raised": { "$type": "color", "$value": "#F4EFF8" }
       },
       "border": {
-        "default": { "$type": "color", "$value": "#DED5E8" }
+        "default": { "$type": "color", "$value": "#DED5E8" },
+        "strong": { "$type": "color", "$value": "#B8A9C8" }
       },
       "text": {
         "primary": { "$type": "color", "$value": "#191225" },
-        "muted": { "$type": "color", "$value": "#675D75" }
+        "secondary": { "$type": "color", "$value": "#40364E" },
+        "muted": { "$type": "color", "$value": "#675D75" },
+        "inverse": { "$type": "color", "$value": "#F7F4FB" }
       },
       "action": {
-        "primary": { "$type": "color", "$value": "#7645DF" }
+        "primary": { "$type": "color", "$value": "#7645DF" },
+        "primaryPressed": { "$type": "color", "$value": "#6233C6" },
+        "focus": { "$type": "color", "$value": "#5D2FC4" }
+      },
+      "accent": {
+        "community": { "$type": "color", "$value": "#C93275" }
+      },
+      "feedback": {
+        "success": { "$type": "color", "$value": "#147A59" },
+        "warning": { "$type": "color", "$value": "#8A5B08" },
+        "danger": { "$type": "color", "$value": "#B42542" }
       }
     }
   },
@@ -77,6 +91,17 @@
     "pill": { "$type": "dimension", "$value": "999px" }
   },
   "font": {
+    "family": {
+      "body": { "$type": "fontFamily", "$value": "Onest" },
+      "display": { "$type": "fontFamily", "$value": "Onest" }
+    },
+    "weight": {
+      "regular": { "$type": "fontWeight", "$value": 400 },
+      "medium": { "$type": "fontWeight", "$value": 500 },
+      "semibold": { "$type": "fontWeight", "$value": 600 },
+      "bold": { "$type": "fontWeight", "$value": 700 },
+      "extrabold": { "$type": "fontWeight", "$value": 800 }
+    },
     "size": {
       "caption": { "$type": "dimension", "$value": "12px" },
       "label": { "$type": "dimension", "$value": "14px" },
@@ -86,9 +111,14 @@
       "title1": { "$type": "dimension", "$value": "32px" },
       "display": { "$type": "dimension", "$value": "40px" }
     },
-    "family": {
-      "body": { "$type": "fontFamily", "$value": "UNRESOLVED_BODY" },
-      "display": { "$type": "fontFamily", "$value": "UNRESOLVED_DISPLAY" }
+    "lineHeight": {
+      "caption": { "$type": "dimension", "$value": "16px" },
+      "label": { "$type": "dimension", "$value": "20px" },
+      "body": { "$type": "dimension", "$value": "24px" },
+      "title3": { "$type": "dimension", "$value": "28px" },
+      "title2": { "$type": "dimension", "$value": "32px" },
+      "title1": { "$type": "dimension", "$value": "40px" },
+      "display": { "$type": "dimension", "$value": "48px" }
     }
   },
   "motion": {
@@ -99,14 +129,8 @@
       "celebratory": { "$type": "duration", "$value": "480ms" }
     },
     "easing": {
-      "standard": {
-        "$type": "cubicBezier",
-        "$value": [0.2, 0, 0, 1]
-      },
-      "exit": {
-        "$type": "cubicBezier",
-        "$value": [0.4, 0, 1, 1]
-      }
+      "standard": { "$type": "cubicBezier", "$value": [0.2, 0, 0, 1] },
+      "exit": { "$type": "cubicBezier", "$value": [0.4, 0, 1, 1] }
     }
   },
   "interaction": {
