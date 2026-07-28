@@ -19,8 +19,13 @@ normative Belcanto Product and PEOS repositories.
 - Use Documentary Pulse: real learning/community imagery leads, performance imagery proves payoff, and controlled portraits provide identity consistency.
 - Use semantic, restrained motion with outcome-based haptics; reduced motion resolves state immediately and removes decorative travel.
 - Compose screens around one meaningful task or evidence trail; reject equal-card dashboards, synthetic metrics, and generic social feeds.
+- Use the ten-frame static prototype as the current composition proof; keep native rendering and user evaluation gated.
 
 The latest packet is
+[`research/high-fidelity-prototype-packet-2026-07-29.md`](research/high-fidelity-prototype-packet-2026-07-29.md).
+The ten-frame visual proof is
+[`prototype/archetypes-visual-proof.html`](prototype/archetypes-visual-proof.html).
+Screen archetype composition research remains in
 [`research/screen-archetypes-packet-2026-07-29.md`](research/screen-archetypes-packet-2026-07-29.md).
 Motion and haptics research remains in
 [`research/motion-haptics-packet-2026-07-29.md`](research/motion-haptics-packet-2026-07-29.md).
