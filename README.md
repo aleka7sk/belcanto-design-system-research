@@ -15,8 +15,11 @@ normative Belcanto Product and PEOS repositories.
   leading foundation, while its v5 alpha runtime remains gated.
 - Use Onest as the exploratory body/display family through static font weights.
 - Author the student experience dark-first with a complete light companion.
+- Gate primitives and screen archetypes on WCAG 2.2 AA plus native platform accessibility behavior.
 
 The latest packet is
+[`research/accessibility-interaction-packet-2026-07-29.md`](research/accessibility-interaction-packet-2026-07-29.md).
+Typography and theme research remains in
 [`research/typography-theme-packet-2026-07-29.md`](research/typography-theme-packet-2026-07-29.md).
 The foundation comparison remains in
 [`research/decision-packet-2026-07-29.md`](research/decision-packet-2026-07-29.md).
