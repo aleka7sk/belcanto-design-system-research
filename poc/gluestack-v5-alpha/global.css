@@ -1,0 +1,37 @@
+@layer theme {
+  :root.dark {
+    --primary: 156 111 255;
+    --primary-foreground: 255 255 255;
+    --background: 9 8 15;
+    --card: 20 18 30;
+    --surface-raised: 27 24 40;
+    --secondary: 31 27 45;
+    --foreground: 247 244 251;
+    --muted: 29 26 41;
+    --muted-foreground: 171 163 186;
+    --border: 54 47 72;
+    --accent: 232 79 146;
+    --success: 66 194 151;
+    --warning: 239 180 87;
+    --destructive: 235 91 112;
+    --ring: 156 111 255;
+  }
+}
+
+@theme inline {
+  --color-primary: rgb(var(--primary));
+  --color-primary-foreground: rgb(var(--primary-foreground));
+  --color-background: rgb(var(--background));
+  --color-card: rgb(var(--card));
+  --color-surface-raised: rgb(var(--surface-raised));
+  --color-secondary: rgb(var(--secondary));
+  --color-foreground: rgb(var(--foreground));
+  --color-muted: rgb(var(--muted));
+  --color-muted-foreground: rgb(var(--muted-foreground));
+  --color-border: rgb(var(--border));
+  --color-accent: rgb(var(--accent));
+  --color-success: rgb(var(--success));
+  --color-warning: rgb(var(--warning));
+  --color-destructive: rgb(var(--destructive));
+  --color-ring: rgb(var(--ring));
+}
