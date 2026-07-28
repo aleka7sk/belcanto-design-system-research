@@ -17,8 +17,11 @@ normative Belcanto Product and PEOS repositories.
 - Author the student experience dark-first with a complete light companion.
 - Gate primitives and screen archetypes on WCAG 2.2 AA plus native platform accessibility behavior.
 - Use Documentary Pulse: real learning/community imagery leads, performance imagery proves payoff, and controlled portraits provide identity consistency.
+- Use semantic, restrained motion with outcome-based haptics; reduced motion resolves state immediately and removes decorative travel.
 
 The latest packet is
+[`research/motion-haptics-packet-2026-07-29.md`](research/motion-haptics-packet-2026-07-29.md).
+Photography and media research remains in
 [`research/photography-media-packet-2026-07-29.md`](research/photography-media-packet-2026-07-29.md).
 Accessibility and interaction research remains in
 [`research/accessibility-interaction-packet-2026-07-29.md`](research/accessibility-interaction-packet-2026-07-29.md).
