@@ -11,8 +11,8 @@ normative Belcanto Product and PEOS repositories.
 
 ## Current recommendations
 
-- Use the gluestack-ui copy-paste/source-ownership model and Figma kit as the
-  leading foundation, while its v5 alpha runtime remains gated.
+- Use the gluestack-ui v5 copy-paste/source-ownership model and Figma kit as a
+  constrained pilot; keep a plain React Native adapter path until device proof.
 - Use Onest as the exploratory body/display family through static font weights.
 - Author the student experience dark-first with a complete light companion.
 - Gate primitives and screen archetypes on WCAG 2.2 AA plus native platform accessibility behavior.
@@ -22,6 +22,10 @@ normative Belcanto Product and PEOS repositories.
 - Use the ten-frame static prototype as the current composition proof; keep native rendering and user evaluation gated.
 
 The latest packet is
+[`research/device-acceptance-matrix-packet-2026-07-29.md`](research/device-acceptance-matrix-packet-2026-07-29.md).
+Its physical-device evidence template is
+[`poc/native-runtime/device-acceptance-template.md`](poc/native-runtime/device-acceptance-template.md).
+The native runtime decision remains in
 [`research/native-runtime-poc-packet-2026-07-29.md`](research/native-runtime-poc-packet-2026-07-29.md).
 The reproducible native source proof is
 [`poc/native-runtime/`](poc/native-runtime/).
