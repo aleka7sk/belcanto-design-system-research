@@ -10,7 +10,6 @@ application code and does not select the Belcanto Product stack.
 
 ```sh
 npm install
-npx expo install --fix
 npm run doctor
 npm run typecheck
 npm run start:clear
@@ -19,6 +18,10 @@ npm run start:clear
 Use an iOS simulator/device and an Android emulator/device. Check all three
 screens in dark/light, with the device font scale at maximum, VoiceOver or
 TalkBack enabled, and Reduce Motion enabled and disabled.
+
+Record each physical-device run with
+[`device-acceptance-template.md`](device-acceptance-template.md). Simulator and
+emulator results are diagnostic and do not close the device gate.
 
 ## What is encoded
 
