@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Belcanto — five archetype visual proof</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap");
+    :root{font-family:Onest,system-ui,sans-serif;color:#191225;background:#e8e1ec}
+    *{box-sizing:border-box} body{margin:0;padding:48px} h1{margin:0 0 8px;font-size:38px}
+    .intro{max-width:920px;margin-bottom:36px;color:#514769}.board{display:grid;grid-template-columns:repeat(2,390px);gap:32px;align-items:start}
+    .pair{display:grid;gap:12px}.label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .phone{--canvas:#09080f;--surface:#14121e;--raised:#1b1828;--line:#362f48;--text:#f7f4fb;--muted:#aba3ba;--action:#9c6fff;--on:#09080f;--community:#e84f92;--danger:#eb5b70;--success:#42c297;width:390px;height:844px;background:var(--canvas);color:var(--text);border-radius:34px;overflow:hidden;box-shadow:0 18px 60px #17101f2b;border:1px solid var(--line);position:relative}
+    .phone.light{--canvas:#faf7fc;--surface:#fffdfE;--raised:#f4eff8;--line:#ded5e8;--text:#191225;--muted:#675d75;--action:#7645df;--on:#fffdfE;--community:#c93275;--danger:#b42542;--success:#147a59}
+    .status{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:12px;font-weight:700}
+    .content{padding:14px 22px 92px;height:800px;overflow:hidden}.eyebrow{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;font-weight:700}
+    h2{font-size:32px;line-height:1.12;margin:6px 0 22px;letter-spacing:-.025em}.lead{font-size:18px;line-height:1.45;margin:-12px 0 22px;color:var(--muted)}
+    .hero{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px;margin-bottom:20px}.hero.accent{background:linear-gradient(145deg,var(--surface),color-mix(in srgb,var(--action) 20%,var(--surface)));border-color:color-mix(in srgb,var(--action) 56%,var(--line))}
+    .time{font-size:46px;font-weight:800;letter-spacing:-.05em}.meta{color:var(--muted);font-size:14px;line-height:1.45}.title{font-size:21px;font-weight:700;margin:8px 0}.button{min-height:52px;border-radius:14px;background:var(--action);color:var(--on);display:flex;align-items:center;justify-content:center;font-weight:800;margin-top:18px;padding:0 18px}
+    .section{margin:22px 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}.row{display:grid;grid-template-columns:12px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line)}.dot{width:10px;height:10px;border-radius:50%;background:var(--action);margin-top:6px}.row strong{display:block;margin-bottom:4px}
+    .evidence{padding:16px 0;border-top:1px solid var(--line)}.quote{font-size:18px;line-height:1.45;margin:7px 0}.source{font-size:12px;color:var(--muted)}
+    .media{height:210px;border-radius:20px;background:linear-gradient(145deg,#2d2738,#514769);display:flex;align-items:flex-end;padding:18px;margin-bottom:18px;position:relative;overflow:hidden}.media:before{content:"CONSENT-SAFE MEDIA PLACEHOLDER";position:absolute;inset:0;display:grid;place-items:center;color:#d2ccdc;font-size:11px;letter-spacing:.08em}.media span{position:relative;font-size:12px;color:white}
+    .chip{display:inline-flex;min-height:32px;padding:0 12px;border:1px solid var(--line);border-radius:999px;align-items:center;font-size:12px;color:var(--muted);margin:0 6px 6px 0}
+    label{font-size:13px;font-weight:700;display:block;margin:16px 0 7px}.input{min-height:52px;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:14px;font-size:16px}.input.error{border:2px solid var(--danger)}.error-text{color:var(--danger);font-size:12px;margin-top:6px}.notice{border-left:4px solid var(--action);background:var(--raised);padding:14px 16px;border-radius:0 12px 12px 0;font-size:13px;line-height:1.45;margin:18px 0}.notice.danger{border-color:var(--danger)}
+    .recovery-icon{width:64px;height:64px;border-radius:20px;background:var(--raised);display:grid;place-items:center;font-size:28px;margin:70px 0 22px}.secondary{min-height:48px;display:grid;place-items:center;color:var(--muted);font-weight:700}
+    nav{position:absolute;left:0;right:0;bottom:0;height:78px;background:color-mix(in srgb,var(--canvas) 94%,transparent);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:8px 10px 10px}.nav{display:grid;place-items:center;font-size:11px;color:var(--muted)}.nav b{font-size:18px}.nav.active{color:var(--action)}
+    .stress{margin-top:48px;max-width:812px;background:#fff;border-radius:24px;padding:28px}.stress h2{margin-top:0}.matrix{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.case{border:1px solid #ded5e8;border-radius:14px;padding:16px}.case strong{display:block;margin-bottom:6px}.case p{margin:0;color:#675d75;font-size:14px;line-height:1.45}
+    @media(max-width:900px){body{padding:22px}.board{grid-template-columns:390px}.matrix{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <h1>Belcanto mobile archetypes</h1>
+  <p class="intro">Exploratory high-fidelity composition proof. All people, dates and lesson details below are explicitly fictional fixtures. No screen is a product requirement.</p>
+  <main class="board" id="board"></main>
+  <section class="stress">
+    <h2>Focused stress proof</h2>
+    <div class="matrix">
+      <div class="case"><strong>200% text / 320 px</strong><p>Media is removed before essential context. Bottom navigation may switch to a platform overflow pattern. Primary action remains reachable and no fixed-height text container is allowed.</p></div>
+      <div class="case"><strong>Sparse / corrected evidence</strong><p>“Пока есть одна запись” replaces an empty chart. Correction shows old value, new value, author, date and reason; it never silently rewrites history.</p></div>
+      <div class="case"><strong>Revoked consent</strong><p>Community media becomes a neutral surface. Event name, organiser, capacity and participation action continue to work without identifying the person.</p></div>
+      <div class="case"><strong>Offline / conflict</strong><p>Local input is preserved. The interface states whether data is cached, pending, rejected or requires comparison with a server version.</p></div>
+      <div class="case"><strong>Reduced motion</strong><p>All frames render directly in their final state. Progress meaning, save result and error recovery remain visible without travel, parallax, shimmer or celebration.</p></div>
+      <div class="case"><strong>Reading order</strong><p>Header → state summary → dominant content → supporting context → primary action → secondary content → navigation. Decorative media and placeholders are excluded.</p></div>
+    </div>
+  </section>
+  <script>
+    const screens=[
+      {name:"Сегодня",body:`<div class="eyebrow">Среда · 29 июля</div><h2>Добрый вечер,<br>Амина</h2><div class="hero accent"><div class="meta">Следующее занятие · сегодня</div><div class="time">19:00</div><div class="title">Индивидуальный урок вокала</div><div class="meta">Педагог: Алия · кабинет 3<br>Подготовить первый куплет “All of Me”</div><div class="button">Открыть подготовку</div></div><div class="section">Дальше</div><div class="row"><i class="dot"></i><div><strong>Задание после урока</strong><span class="meta">Появится после комментария педагога</span></div></div><div class="row"><i class="dot" style="background:var(--community)"></i><div><strong>Вокальный вечер</strong><span class="meta">Суббота, 18:30 · осталось 8 мест</span></div></div>`},
+      {name:"Прогресс",body:`<div class="eyebrow">Развитие голоса</div><h2>Не баллы.<br>Доказательства роста.</h2><p class="lead">Текущий фокус: свободный переход между регистрами.</p><div class="evidence"><div class="source">28 июля · комментарий педагога Алии</div><div class="quote">«Переход стал мягче в медленном темпе. Следующий шаг — сохранить его в полной фразе».</div><span class="chip">Аудиозапись</span><span class="chip">Урок №12</span></div><div class="evidence"><div class="source">21 июля · выполненное задание</div><div class="title">Первый куплет записан с двух попыток</div><div class="meta">Источник: загруженная учеником запись. Это факт выполнения, не оценка качества.</div></div><div class="notice">Исправление от 20 июля сохранено вместе с причиной и предыдущим значением.</div>`},
+      {name:"Сообщество",body:`<div class="eyebrow">Сообщество Belcanto</div><h2>Вокальный вечер<br>на малой сцене</h2><div class="media"><span>Без текста поверх неконтролируемой области</span></div><div class="title">Суббота · 18:30</div><div class="meta">Организатор: школа Belcanto<br>Астана · зал будет указан после подтверждения<br>Осталось 8 из 24 мест</div><div class="button">Присоединиться</div><div class="secondary">Задать вопрос организатору</div>`},
+      {name:"Форма",body:`<div class="eyebrow">Профиль ученика</div><h2>Музыкальные предпочтения</h2><p class="lead">Это поможет педагогу выбирать подходящий репертуар. Поле можно изменить позже.</p><label>Любимые исполнители</label><div class="input">Adele, Dimash, Zivert</div><label>Комфортный язык песен</label><div class="input error">Русский, English</div><div class="error-text">Выберите язык из списка или добавьте свой вариант.</div><label>Комментарий для педагога · необязательно</label><div class="input">Хочу увереннее петь перед людьми</div><div class="notice danger"><strong>Есть новая версия на сервере.</strong><br>Ваш текст сохранён локально. Сравните версии перед отправкой.</div><div class="button">Сравнить и сохранить</div>`},
+      {name:"Восстановление",body:`<div class="recovery-icon">↻</div><div class="eyebrow">Нет соединения</div><h2>Расписание показано из сохранённой копии</h2><p class="lead">Последнее обновление: сегодня в 16:42. Ваши изменения не потеряны и будут отправлены после подключения.</p><div class="notice">Безопасно: черновик комментария сохранён только на этом устройстве.</div><div class="button">Повторить подключение</div><div class="secondary">Продолжить офлайн</div><div class="meta" style="margin-top:28px">Код для поддержки: BC-NET-204<br>Не содержит личных данных.</div>`}
+    ];
+    const nav=`<nav><div class="nav active"><b>●</b>Сегодня</div><div class="nav"><b>◔</b>Прогресс</div><div class="nav"><b>♥</b>Люди</div><div class="nav"><b>○</b>Профиль</div></nav>`;
+    const board=document.querySelector("#board");
+    screens.forEach((s,i)=>{
+      ["dark","light"].forEach(theme=>{
+        const wrap=document.createElement("section");wrap.className="pair";
+        wrap.innerHTML=`<div class="label">${s.name} · ${theme}</div><article class="phone ${theme==="light"?"light":""}" aria-label="${s.name}, ${theme} theme"><div class="status"><span>19:42</span><span>● ● ▰</span></div><div class="content">${s.body}</div>${i<4?nav:""}</article>`;
+        board.appendChild(wrap);
+      });
+    });
+  </script>
+</body>
+</html>
