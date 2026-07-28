@@ -411,7 +411,7 @@
   "interaction": {
     "minimumTarget": {
       "$type": "dimension",
-      "$value": "44px"
+      "$value": "48px"
     }
   },
   "accessibility": {
@@ -431,13 +431,17 @@
       "$type": "number",
       "$value": 3
     },
-    "dynamicTypeMax": {
-      "$type": "number",
-      "$value": 1.6
-    },
     "minimumTarget": {
       "$type": "dimension",
-      "$value": "44px"
+      "$value": "48px"
+    },
+    "dynamicTypeMinimumTestScale": {
+      "$type": "number",
+      "$value": 2
+    },
+    "dynamicTypePlatformMaximum": {
+      "$type": "boolean",
+      "$value": true
     }
   }
 }
