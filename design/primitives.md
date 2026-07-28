@@ -63,6 +63,16 @@ Status: **EXPLORATORY / NON-NORMATIVE**
 - `Menu`
 - `Toast`
 
+## Motion and haptics rule
+
+Motion and haptics are cross-cutting primitive behavior, not standalone visual
+components. Primitives consume semantic roles (`state`, `transition`,
+`progress`, `celebration`) and must expose an immediate reduced-motion path.
+Generic taps do not trigger haptics. Selection, confirmation, warning, and
+rejection feedback may do so when the platform supports it, but never as the
+only signal. Infinite decorative loops, autoplay celebration, bounce-heavy
+navigation, and per-screen magic durations are rejected.
+
 ## Media rule
 
 `Image` owns loading, error, placeholder, cache, description policy, and focal
