@@ -9,16 +9,16 @@ foundations, component primitives, Figma handoff, and technical feasibility.
 It does not define product flows, select the application stack, or modify the
 normative Belcanto Product and PEOS repositories.
 
-## Current recommendation
+## Current recommendations
 
-Use the gluestack-ui copy-paste/source-ownership model and Figma kit as the
-leading foundation for Belcanto's own tokens and wrapped primitives. Do not
-adopt the current gluestack-ui v5 alpha runtime as a production dependency
-until the stabilization gate in
-[`decisions/0001-foundation-recommendation.md`](decisions/0001-foundation-recommendation.md)
-passes.
+- Use the gluestack-ui copy-paste/source-ownership model and Figma kit as the
+  leading foundation, while its v5 alpha runtime remains gated.
+- Use Onest as the exploratory body/display family through static font weights.
+- Author the student experience dark-first with a complete light companion.
 
-The exact decision packet is in
+The latest packet is
+[`research/typography-theme-packet-2026-07-29.md`](research/typography-theme-packet-2026-07-29.md).
+The foundation comparison remains in
 [`research/decision-packet-2026-07-29.md`](research/decision-packet-2026-07-29.md).
 
 ## Repository map
