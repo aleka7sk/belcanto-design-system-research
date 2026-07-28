@@ -3,7 +3,7 @@
   "meta": {
     "name": "Belcanto exploratory tokens",
     "status": "EXPLORATORY / NON-NORMATIVE",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "date": "2026-07-29"
   },
   "color": {
@@ -404,7 +404,45 @@
       },
       "rule": {
         "$type": "string",
-        "$value": "Remove spatial/decorative motion; preserve immediate state change and progress meaning"
+        "$value": "Resolve state immediately; remove parallax, bounce, decorative travel, shared-element travel, autoplay loops, and celebration motion; preserve static result, progress meaning, and non-motion feedback"
+      }
+    },
+    "semantic": {
+      "state": {
+        "$type": "duration",
+        "$value": "120ms"
+      },
+      "transition": {
+        "$type": "duration",
+        "$value": "200ms"
+      },
+      "progress": {
+        "$type": "duration",
+        "$value": "320ms"
+      },
+      "celebration": {
+        "$type": "duration",
+        "$value": "480ms"
+      }
+    },
+    "distance": {
+      "subtle": {
+        "$type": "dimension",
+        "$value": "4px"
+      },
+      "standard": {
+        "$type": "dimension",
+        "$value": "12px"
+      },
+      "rule": {
+        "$type": "string",
+        "$value": "No decorative travel beyond 12px; navigation follows platform conventions"
+      }
+    },
+    "repeat": {
+      "rule": {
+        "$type": "string",
+        "$value": "No infinite decorative animation; indeterminate progress may repeat only while work is active"
       }
     }
   },
@@ -500,6 +538,28 @@
         "$type": "string",
         "$value": "Decorative loading preview; never announced as loaded content"
       }
+    }
+  },
+  "haptics": {
+    "selection": {
+      "$type": "string",
+      "$value": "selection"
+    },
+    "confirmation": {
+      "$type": "string",
+      "$value": "success-or-platform-confirm"
+    },
+    "warning": {
+      "$type": "string",
+      "$value": "warning"
+    },
+    "rejection": {
+      "$type": "string",
+      "$value": "error-or-platform-reject"
+    },
+    "rule": {
+      "$type": "string",
+      "$value": "Never the sole feedback; no haptic on every generic tap; respect platform availability and user settings"
     }
   }
 }
