@@ -16,8 +16,11 @@ normative Belcanto Product and PEOS repositories.
 - Use Onest as the exploratory body/display family through static font weights.
 - Author the student experience dark-first with a complete light companion.
 - Gate primitives and screen archetypes on WCAG 2.2 AA plus native platform accessibility behavior.
+- Use Documentary Pulse: real learning/community imagery leads, performance imagery proves payoff, and controlled portraits provide identity consistency.
 
 The latest packet is
+[`research/photography-media-packet-2026-07-29.md`](research/photography-media-packet-2026-07-29.md).
+Accessibility and interaction research remains in
 [`research/accessibility-interaction-packet-2026-07-29.md`](research/accessibility-interaction-packet-2026-07-29.md).
 Typography and theme research remains in
 [`research/typography-theme-packet-2026-07-29.md`](research/typography-theme-packet-2026-07-29.md).
