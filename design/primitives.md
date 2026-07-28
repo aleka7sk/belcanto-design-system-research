@@ -23,6 +23,8 @@ Status: **EXPLORATORY / NON-NORMATIVE**
 - `Text`
 - `Heading`
 - `Icon`
+- `Image`
+- `MediaFrame`
 
 ## Layer 2 — interaction
 
@@ -60,6 +62,19 @@ Status: **EXPLORATORY / NON-NORMATIVE**
 - `Modal`
 - `Menu`
 - `Toast`
+
+## Media rule
+
+`Image` owns loading, error, placeholder, cache, description policy, and focal
+metadata. `MediaFrame` owns semantic aspect, crop, overlay-safe region, scrim,
+and an optional short caption slot. Product composites may consume them but
+must not invent per-screen crop offsets or place essential actions and long
+text directly over photography.
+
+Meaningful images require contextual descriptions; decorative images are
+excluded from the accessibility tree. Every production asset requires
+provenance, consent/release scope, expiry/revocation data, and normalized focal
+metadata before promotion.
 
 ## Wrapper rule
 
