@@ -22,6 +22,10 @@ normative Belcanto Product and PEOS repositories.
 - Use the ten-frame static prototype as the current composition proof; keep native rendering and user evaluation gated.
 
 The latest packet is
+[`research/native-runtime-poc-packet-2026-07-29.md`](research/native-runtime-poc-packet-2026-07-29.md).
+The reproducible native source proof is
+[`poc/native-runtime/`](poc/native-runtime/).
+High-fidelity visual research remains in
 [`research/high-fidelity-prototype-packet-2026-07-29.md`](research/high-fidelity-prototype-packet-2026-07-29.md).
 The ten-frame visual proof is
 [`prototype/archetypes-visual-proof.html`](prototype/archetypes-visual-proof.html).
