@@ -3,7 +3,7 @@
   "meta": {
     "name": "Belcanto exploratory tokens",
     "status": "EXPLORATORY / NON-NORMATIVE",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "date": "2026-07-29"
   },
   "color": {
@@ -442,6 +442,64 @@
     "dynamicTypePlatformMaximum": {
       "$type": "boolean",
       "$value": true
+    }
+  },
+  "media": {
+    "aspect": {
+      "portrait": {
+        "$type": "string",
+        "$value": "4 / 5"
+      },
+      "editorial": {
+        "$type": "string",
+        "$value": "3 / 2"
+      },
+      "hero": {
+        "$type": "string",
+        "$value": "16 / 10"
+      }
+    },
+    "scrim": {
+      "none": {
+        "$type": "number",
+        "$value": 0
+      },
+      "textMinimum": {
+        "$type": "number",
+        "$value": 0.6
+      },
+      "textStrong": {
+        "$type": "number",
+        "$value": 0.68
+      },
+      "rule": {
+        "$type": "string",
+        "$value": "Opacity is the minimum black coverage at every pixel directly behind overlay text"
+      }
+    },
+    "focalPoint": {
+      "defaultX": {
+        "$type": "number",
+        "$value": 0.5
+      },
+      "defaultY": {
+        "$type": "number",
+        "$value": 0.5
+      },
+      "rule": {
+        "$type": "string",
+        "$value": "Use normalized asset metadata; center is fallback, not an authored crop"
+      }
+    },
+    "placeholder": {
+      "strategy": {
+        "$type": "string",
+        "$value": "thumbhash-or-blurhash"
+      },
+      "accessibility": {
+        "$type": "string",
+        "$value": "Decorative loading preview; never announced as loaded content"
+      }
     }
   }
 }
