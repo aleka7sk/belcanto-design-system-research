@@ -18,8 +18,11 @@ normative Belcanto Product and PEOS repositories.
 - Gate primitives and screen archetypes on WCAG 2.2 AA plus native platform accessibility behavior.
 - Use Documentary Pulse: real learning/community imagery leads, performance imagery proves payoff, and controlled portraits provide identity consistency.
 - Use semantic, restrained motion with outcome-based haptics; reduced motion resolves state immediately and removes decorative travel.
+- Compose screens around one meaningful task or evidence trail; reject equal-card dashboards, synthetic metrics, and generic social feeds.
 
 The latest packet is
+[`research/screen-archetypes-packet-2026-07-29.md`](research/screen-archetypes-packet-2026-07-29.md).
+Motion and haptics research remains in
 [`research/motion-haptics-packet-2026-07-29.md`](research/motion-haptics-packet-2026-07-29.md).
 Photography and media research remains in
 [`research/photography-media-packet-2026-07-29.md`](research/photography-media-packet-2026-07-29.md).
