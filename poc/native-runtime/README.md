@@ -9,29 +9,36 @@ application code and does not select the Belcanto Product stack.
 ## Run
 
 ```sh
-npm install
+npm ci
 npm run doctor
 npm run typecheck
-npm run start:clear
+npm run prebuild:check
 ```
 
-Use an iOS simulator/device and an Android emulator/device. Check all three
-screens in dark/light, with the device font scale at maximum, VoiceOver or
-TalkBack enabled, and Reduce Motion enabled and disabled.
+Expo Go is excluded from the acceptance path for this SDK 57 proof. Install a
+release-like native build on a connected physical device:
 
-Record each physical-device run with
-[`device-acceptance-template.md`](device-acceptance-template.md). Simulator and
-emulator results are diagnostic and do not close the device gate.
+```sh
+npm run device:ios:release
+npm run device:android:release
+```
+
+Follow [`device-runbook.md`](device-runbook.md) and record each physical-device
+run with
+[`device-acceptance-template.md`](device-acceptance-template.md). Simulator,
+emulator and debug results are diagnostic and do not close the device gate.
 
 ## What is encoded
 
-- Onest regular, medium, semibold and bold through Expo Google Fonts;
+- Onest regular, medium, semibold and bold embedded at native build time through
+  the Expo Font config plugin;
 - semantic theme values rather than library-specific component colours;
 - persistent labels and preserved local text during a version conflict;
 - explicit offline ownership and recovery copy;
 - 48–52 point minimum interactive targets;
 - explicit tab state, headings, alerts, labels and live announcements;
 - wrapping layouts without fixed screen height;
+- live platform, logical-width, font-scale and system Reduce Motion diagnostics;
 - visible fixtures and no invented product requirements.
 
 ## Runtime candidate harness
@@ -51,7 +58,8 @@ reading order, 200% reflow and conflict/offline behavior remain identical.
 
 ## Honest boundary
 
-Repository inspection can prove source structure and dependency compatibility;
-it cannot prove physical haptics, platform screen-reader order, keyboard
-behavior, rendering performance or the exact maximum-font composition. Those
-checks require the device matrix in the packet.
+Repository inspection and native prebuild can prove source structure,
+dependency compatibility, font embedding configuration and generated native
+projects. They cannot prove physical haptics, platform screen-reader order,
+keyboard behavior, rendering performance or the exact maximum-font
+composition. Those checks require the device matrix in the packet.
