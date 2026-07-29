@@ -39,10 +39,18 @@ From the repository root:
 git checkout <commit-under-test>
 cd poc/native-runtime
 npm ci
+npm run verify:expo-modules-jsi-patch
 npm run doctor
 npm run typecheck
 npm run prebuild:check
 ```
+
+`npm ci` runs a `postinstall` hook that reapplies the temporary
+`expo-modules-jsi` Swift workaround documented in [`README.md`](README.md);
+without it the iOS Release build fails to compile on the current Xcode
+toolchain. `verify:expo-modules-jsi-patch` must pass before a device build, so
+the tested binary comes from a reproducible dependency state rather than a
+hand-edited `node_modules/` tree.
 
 `prebuild:check` regenerates ignored `ios/` and `android/` directories and
 proves that the `expo-font` config plugin can embed the four Onest weights.

@@ -4,6 +4,9 @@
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "postinstall": "node scripts/patch-expo-modules-jsi.js",
+    "patch:expo-modules-jsi": "node scripts/patch-expo-modules-jsi.js",
+    "verify:expo-modules-jsi-patch": "node scripts/patch-expo-modules-jsi.js --check",
     "start": "expo start",
     "start:clear": "expo start --clear",
     "android": "expo run:android",

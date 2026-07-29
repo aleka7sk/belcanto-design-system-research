@@ -177,6 +177,32 @@ The updated source passed:
 The prebuild generates ignored `android/` and `ios/` directories. The repository
 keeps only the source config and lockfile.
 
+### Reproducibility of the iOS Release build
+
+`expo-modules-jsi@57.0.4` contains a Swift guard expression that does not
+compile on the Xcode toolchain used here. The fix previously existed only as a
+hand edit inside git-ignored `node_modules/`, so `npm ci` would have restored
+the failing source and made the Release build non-reproducible — a build that
+cannot be reproduced cannot support an acceptance record.
+
+The workaround is now a repository-owned `postinstall` script,
+`poc/native-runtime/scripts/patch-expo-modules-jsi.js`, with an explicit
+`npm run verify:expo-modules-jsi-patch` check. It edits one file in one
+dependency, is idempotent, and fails loudly on dependency drift. No new
+dependency (including `patch-package`) was introduced.
+
+Upstream issue: <https://github.com/expo/expo/issues/47957>. It is closed as
+"incomplete issue: missing or invalid repro" — closed for lack of a valid
+reproduction, not by a fix. That closure is not evidence that the dependency
+defect is resolved; the published `expo-modules-jsi@57.0.4` inspected here still
+contains the failing expression. The workaround is removed when a published
+`expo-modules-jsi` no longer contains that expression, never on the basis of the
+GitHub issue status.
+
+TypeScript stays pinned at `~6.0.3`: Expo SDK 57 requires it, and both
+`expo-doctor` and `npx expo install --check` report `5.9.3` as a major version
+mismatch against the expected `~6.0.3`.
+
 ## Visual direction, tokens and primitives
 
 Visual direction is unchanged: editorial task-led hierarchy, restrained violet,
@@ -197,9 +223,10 @@ No new primitive is promoted. The tested control set remains:
 
 The exact next action is now external and bounded:
 
-1. rebuild the Release binary from the repaired source and reinstall it on the
-   iPhone, then rerun D08, D09 and D13 with the screen reader off and again
-   with VoiceOver on;
+1. run `npm ci` and `npm run verify:expo-modules-jsi-patch` so the build comes
+   from a reproducible dependency state, then rebuild the Release binary from
+   the repaired source, reinstall it on the iPhone and rerun D08, D09 and D13
+   with the screen reader off and again with VoiceOver on;
 2. complete the remaining D01–D14 rows on a qualifying iPhone and attach
    evidence;
 3. repeat on one qualifying Android;
