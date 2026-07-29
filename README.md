@@ -27,6 +27,9 @@ Its release-like execution runbook is
 [`poc/native-runtime/device-runbook.md`](poc/native-runtime/device-runbook.md).
 The physical-device evidence template is
 [`poc/native-runtime/device-acceptance-template.md`](poc/native-runtime/device-acceptance-template.md).
+The first physical iPhone record is
+[`poc/native-runtime/device-acceptance-iphone-2026-07-29.md`](poc/native-runtime/device-acceptance-iphone-2026-07-29.md)
+and it is `FAIL`: D08, D09 and D13 failed and every other row is NOT EXECUTED.
 The acceptance matrix decision remains in
 [`research/device-acceptance-matrix-packet-2026-07-29.md`](research/device-acceptance-matrix-packet-2026-07-29.md).
 The native runtime decision remains in

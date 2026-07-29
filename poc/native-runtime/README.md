@@ -28,6 +28,10 @@ run with
 [`device-acceptance-template.md`](device-acceptance-template.md). Simulator,
 emulator and debug results are diagnostic and do not close the device gate.
 
+The current physical-device record is
+[`device-acceptance-iphone-2026-07-29.md`](device-acceptance-iphone-2026-07-29.md).
+It is `FAIL`: D08, D09 and D13 failed and every other row is `NOT EXECUTED`.
+
 ## What is encoded
 
 - Onest regular, medium, semibold and bold embedded at native build time through
@@ -40,6 +44,32 @@ emulator and debug results are diagnostic and do not close the device gate.
 - wrapping layouts without fixed screen height;
 - live platform, logical-width, font-scale and system Reduce Motion diagnostics;
 - visible fixtures and no invented product requirements.
+
+## Interaction contract
+
+Every primary action must change visible state. A handler that only calls
+`AccessibilityInfo.announceForAccessibility(...)` is **not** a complete
+interaction: with the screen reader disabled it produces no observable result,
+so the control reads as a dead affordance and as a missed press. This was the
+cause of the D08/D09/D13 failures recorded in
+[`device-acceptance-iphone-2026-07-29.md`](device-acceptance-iphone-2026-07-29.md).
+
+The current specimen encodes:
+
+| Action | Visible outcome | Announcement |
+|---|---|---|
+| `Открыть подготовку` | Inline disclosure of the preparation fixture; the button toggles to `Свернуть подготовку` and exposes `expanded` | One announcement per toggle |
+| `Сохранить` | Conflict alert appears; the locally edited text is preserved | One outcome announcement |
+| `Сравнить версии` | Inline comparison surface with a `Сравнение версий` heading and labelled `Ваш текст` / `Более новая версия` values; the button toggles to `Скрыть сравнение` | One announcement per toggle |
+| `Повторить подключение` | `idle → checking → still offline` with a visible pending label, a visible offline outcome, a local-data-safety line and an attempt counter | One announcement on the final result |
+
+The retry fixture disables the button while checking and exposes the busy and
+disabled accessibility state, so a repeated press cannot start a second attempt
+or produce a second announcement. Returning to the foreground during a pending
+retry settles the same deterministic result once. The pending state is semantic,
+not decorative: system Reduce Motion shortens it but never removes it. No
+network request, navigation, Modal or Sheet is involved — those primitives
+remain outside the accepted set.
 
 ## Runtime candidate harness
 

@@ -54,8 +54,16 @@ shell or generic dashboard cards.
 
 The form conflict is the strongest adapter test: the input remains labelled,
 local text remains present, the conflicting server state becomes an alert, and
-the primary action changes to comparison. Offline recovery states exactly what
-is cached and what will sync later.
+the primary action changes to comparison, which reveals an inline surface
+showing `Ваш текст` and the named `remoteNote` fixture without overwriting
+either. Offline recovery states exactly what is cached and what will sync
+later, and its retry runs a visible `idle → checking → still offline` sequence.
+
+The first physical iPhone run corrected an assumption in this section: a
+primary action whose only effect was a screen-reader announcement was treated
+as complete during source review, and on device it was a dead control. Every
+primary action in the specimen must change visible state; the announcement
+describes that change rather than replacing it.
 
 ## Tokens
 
@@ -96,6 +104,8 @@ Source-level pass:
 - all interactive controls meet the 48-point research target;
 - fixed screen heights are absent, permitting 320-pixel and large-text reflow;
 - roles, selected state, labels, alerts and outcome announcements are encoded;
+- every primary action changes visible state; announcements describe that
+  change and are not the change itself;
 - reduced motion preserves final semantic state.
 
 Not passed in this environment:
@@ -139,6 +149,10 @@ Use one currently supported iPhone and one mid-range Android. For each, record:
 6. The control specimen does not prove gluestack-generated component semantics.
 7. Accessibility announcements can duplicate screen-reader speech.
 8. Maximum font scale may require structural changes, not smaller text.
+9. Source review can accept an announcement-only handler as a working
+   interaction. It was verified on device that this reads as a dead control and
+   as a missed press; primary-action review must now run with the screen reader
+   off as well as on.
 
 ## Open decisions
 

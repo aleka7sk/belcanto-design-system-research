@@ -5,6 +5,10 @@ Status: **EXPLORATORY / NON-NORMATIVE**
 Create one copy per tested device. Do not mark a row passed without the named
 evidence. Redact notifications, account names and device identifiers.
 
+Run every primary action once with the screen reader **off**. An action that
+produces no visible change in that pass fails its own row and D13, even if a
+screen-reader announcement is emitted.
+
 ## Device
 
 | Field | Recorded value |
@@ -35,8 +39,8 @@ emulator records are diagnostic.
 | D05 | Screen-reader order | Heading, content, status and action are announced once in logical order | Traversal recording or transcript | |
 | D06 | Selected tabs | Role, name and selected state are announced | Traversal transcript | |
 | D07 | Form keyboard | Label remains available; field and primary action can be reached; content is not lost | Screen recording | |
-| D08 | Conflict recovery | Local text survives; the conflict is announced once; comparison is the next reachable action without forced focus movement | Screen recording and transcript | |
-| D09 | Offline recovery | Saved/local state and retry consequence are explicit | Screen recording | |
+| D08 | Conflict recovery | Local text survives; the conflict is announced once; comparison is the next reachable action without forced focus movement, and pressing it visibly reveals both versions without overwriting either | Screen recording and transcript | |
+| D09 | Offline recovery | Saved/local state is explicit; retry shows a visible pending state and a visible deterministic outcome; a repeated press starts no second attempt | Screen recording | |
 | D10 | System Reduce Motion | The diagnostic state follows the real system setting; final states remain available without decorative travel or delayed meaning | Paired recordings | |
 | D11 | Background during action | Return state is deterministic; no duplicate confirmation or lost edit | Screen recording | |
 | D12 | Haptic independence | Meaning remains visible/audible when haptics are unavailable | Observation note | |

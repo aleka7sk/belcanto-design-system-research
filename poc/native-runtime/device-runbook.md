@@ -111,11 +111,26 @@ Important observations:
 - D07 verifies the form with the keyboard visible and after dismissal.
 - D08 starts with edited local text, triggers the conflict, verifies the alert
   is announced once, and confirms `Сравнить версии` is the next reachable
-  action without forced focus movement.
+  action without forced focus movement. Pressing it must reveal the inline
+  comparison surface showing both `Ваш текст` and `Более новая версия` with the
+  local edit unchanged; the button must then read `Скрыть сравнение`.
+- D09 presses `Повторить подключение` and observes the full `idle → checking →
+  still offline` sequence: a visible pending label, a disabled/busy button
+  during the check, a visible offline outcome and the local-data-safety line.
 - D10 changes the real system Reduce Motion setting. The app diagnostic line
-  must update; the removed manual toggle is not evidence.
+  must update; the removed manual toggle is not evidence. The retry pending
+  state is semantic and must remain visible under Reduce Motion.
 - D11 backgrounds the app while save/retry feedback is being produced.
+  Returning to the foreground during a pending retry must settle exactly one
+  final offline result.
 - D12 is tested with vibration/haptics disabled or unavailable.
+
+Run every primary-action check **with the screen reader off first**. An action
+whose only effect is an `AccessibilityInfo.announceForAccessibility(...)` call
+is invisible in that pass and must be recorded as a failure of D13 input
+integrity as well as of its own scenario row. Then repeat the pass with
+VoiceOver/TalkBack on and confirm the same state change is announced once and
+not duplicated.
 
 React Native documents that an `accessible` parent can change or suppress
 nested focus, and that Android live regions can announce dynamic changes. The
@@ -196,6 +211,10 @@ Sources:
 A device record is `PASS` only when D01–D14 pass, all required evidence is
 reviewable, and no critical or high-severity defect remains. Missing hardware,
 signing, profiling or evidence means `BLOCKED`, not `PASS`.
+
+A source fix for a defect found on device does not restore any row. Fixing a
+defect invalidates the affected rows: they require a new Release build and a
+fresh physical-device rerun before a result may be recorded again.
 
 After the React Native control passes on both devices, run the same matrix on
 the constrained gluestack v5 primitive pilot. Only then can the research

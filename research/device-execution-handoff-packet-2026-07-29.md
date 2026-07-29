@@ -16,8 +16,34 @@ Overall status:
 - dependency, config, type and bundle gates: **PASS**;
 - native prebuild and font-embedding configuration: **PASS**;
 - release-like device handoff: **READY**;
-- physical iPhone and Android execution: **BLOCKED / NOT EXECUTED**;
+- physical iPhone execution: **FAIL** — D08, D09 and D13 failed on the first
+  run; all other rows remain **NOT EXECUTED**;
+- physical Android execution: **BLOCKED / NOT EXECUTED**;
 - promotion into `belcanto-product`: **BLOCKED**.
+
+## First physical iPhone run — 2026-07-29
+
+A release-like build was installed on an iPhone 14 Pro Max (iOS 26.5.2, 430 pt,
+font scale 1.00, standard motion, VoiceOver off). Three primary actions —
+`Открыть подготовку`, `Сравнить версии` and `Повторить подключение` — showed
+press feedback but produced no observable result. Each handler called only
+`AccessibilityInfo.announceForAccessibility(...)`, so with the screen reader off
+nothing changed, and with it on the visible UI still did not change.
+
+D08 and D09 failed; D13 failed because the actions read as missed presses. The
+`Сохранить` step behaved correctly: the conflict appeared and the locally edited
+text survived.
+
+The specimen has since been repaired so that every primary action changes
+visible state: an inline preparation disclosure, an inline version-comparison
+surface that shows `Ваш текст` and `Более новая версия` without overwriting
+either, and an explicit `idle → checking → still offline` retry fixture that
+blocks duplicate attempts and settles once after backgrounding. This corrects
+the source; it does not restore any acceptance row. Every failed and unexecuted
+row requires a new Release build and a fresh physical-device rerun.
+
+Record:
+[`poc/native-runtime/device-acceptance-iphone-2026-07-29.md`](../poc/native-runtime/device-acceptance-iphone-2026-07-29.md).
 
 ## Execution approach comparison
 
@@ -79,6 +105,14 @@ Source: <https://reactnative.dev/docs/accessibility>
 
 These choices remain subject to VoiceOver/TalkBack observation. Source
 correctness is not a substitute for device evidence.
+
+### Announcement-only actions (found on device, 2026-07-29)
+
+Three primary actions carried an announcement as their entire effect. That is
+not a complete interaction: it is invisible whenever the screen reader is off,
+and it changes nothing even when the screen reader is on. Every primary action
+now produces a visible state change first, with at most one concise
+announcement describing that same change.
 
 ## Minimum device profile
 
@@ -163,8 +197,11 @@ No new primitive is promoted. The tested control set remains:
 
 The exact next action is now external and bounded:
 
-1. run the release-like build on one qualifying iPhone;
-2. complete D01–D14 and attach evidence;
+1. rebuild the Release binary from the repaired source and reinstall it on the
+   iPhone, then rerun D08, D09 and D13 with the screen reader off and again
+   with VoiceOver on;
+2. complete the remaining D01–D14 rows on a qualifying iPhone and attach
+   evidence;
 3. repeat on one qualifying Android;
 4. fix every critical/high defect and rerun affected rows;
 5. implement the constrained gluestack v5 primitive pilot;
@@ -182,5 +219,6 @@ Template:
 
 **Pre-device readiness — PASS.  
 Release-like handoff — READY.  
-Physical-device acceptance — BLOCKED / NOT EXECUTED.  
+Physical iPhone acceptance — FAIL (D08, D09, D13); all other rows NOT EXECUTED.  
+Physical Android acceptance — BLOCKED / NOT EXECUTED.  
 Promotion — BLOCKED.**
