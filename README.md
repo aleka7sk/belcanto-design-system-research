@@ -22,9 +22,13 @@ normative Belcanto Product and PEOS repositories.
 - Use the ten-frame static prototype as the current composition proof; keep native rendering and user evaluation gated.
 
 The latest packet is
-[`research/device-acceptance-matrix-packet-2026-07-29.md`](research/device-acceptance-matrix-packet-2026-07-29.md).
-Its physical-device evidence template is
+[`research/device-execution-handoff-packet-2026-07-29.md`](research/device-execution-handoff-packet-2026-07-29.md).
+Its release-like execution runbook is
+[`poc/native-runtime/device-runbook.md`](poc/native-runtime/device-runbook.md).
+The physical-device evidence template is
 [`poc/native-runtime/device-acceptance-template.md`](poc/native-runtime/device-acceptance-template.md).
+The acceptance matrix decision remains in
+[`research/device-acceptance-matrix-packet-2026-07-29.md`](research/device-acceptance-matrix-packet-2026-07-29.md).
 The native runtime decision remains in
 [`research/native-runtime-poc-packet-2026-07-29.md`](research/native-runtime-poc-packet-2026-07-29.md).
 The reproducible native source proof is
